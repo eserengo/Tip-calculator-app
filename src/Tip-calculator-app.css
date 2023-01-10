@@ -1,0 +1,269 @@
+:root {
+  /* --- FONTS --- */
+  font-family: "Space Mono";
+  font-size: 24px;
+  font-weight: 500;
+  --light: 200;
+  --heavy: 700;
+  text-rendering: optimizeLegibility;
+
+  /* --- COLOR PALETTE  --- */
+  --strong-cyan: hsl(172, 67%, 45%);
+  --very-dark-cyan: hsl(183, 100%, 15%);
+  --dark-grayish-cyan: hsl(186, 14%, 43%);
+  --grayish-cyan: hsl(184, 14%, 56%);
+  --light-grayish-cyan: hsl(185, 41%, 84%);
+  --very-light-grayish-cyan: hsl(189, 41%, 97%);
+  --white: hsl(0, 0%, 100%);
+  --blue: hsl(240, 100%, 50%);
+
+  /* --- INPUT VALIDATION --- */
+  --red: rgb(255, 113, 113);
+  --green: rgb(141, 255, 141);
+}
+
+* {
+  box-sizing: border-box;
+  max-width: 100%;
+  padding: 0rem;
+  margin: 0rem auto;
+  user-select: none;
+}
+
+body {
+  background-color: var(--light-grayish-cyan);
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+
+.error {
+  color: var(--red);
+}
+
+.invalid {
+  border: 2px solid var(--red) !important;
+}
+
+.success {
+  color: var(--green);
+}
+
+.valid {
+  border: 2px solid var(--green) !important;
+}
+
+.message {
+  font-size: 0.5rem;
+  font-weight: var(--light);
+}
+
+.logo {
+  margin: 2rem auto;
+}
+
+.card {
+  min-width: 13rem;
+  background-color: var(--white);
+  padding: 1rem;
+  border-radius: 0.75rem;
+  display: flex;
+  flex-flow: column nowrap;
+  flex: 1 1 100%;
+  gap: 1rem;
+}
+
+.wrapper {
+  position: relative;
+  display: block;
+  padding: 0.5rem;
+}
+
+.lni {
+  font-size: 0.75rem;
+  position: absolute;
+  left: 1rem;
+  top: 2.35rem;
+  color: var(--grayish-cyan);
+}
+
+.fieldset {
+  border: none;
+  display: grid;
+  grid-template: repeat(3, 1fr) / repeat(2, 1fr);
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+#btn-5 {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+#btn-10 {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+#btn-15 {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+#btn-25 {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+#custom {
+  width: 4.5rem;
+  height: 2.5rem;
+  grid-column: 1;
+  grid-row: 3;
+}
+
+.label,
+.legend {
+  font-size: 0.5rem;
+  color: var(--dark-grayish-cyan);
+  display: block;
+  margin: 0rem;
+  padding: 0.25rem 0rem;
+}
+
+input[type=number] {
+  color: var(--very-dark-cyan);
+  font-family: "Space Mono";
+  font-size: 1rem;
+  font-weight: var(--heavy);
+  text-align: right;
+}
+
+.input {
+  background-color: var(--very-light-grayish-cyan);
+  border: none;
+  border-radius: 0.25rem;
+  width: 100%;
+  height: 2rem;
+  padding: 0.25rem;
+}
+
+.input:focus {
+  outline: none;
+  border: 2px solid var(--strong-cyan);
+}
+
+.input::placeholder {
+  float: right;
+  margin: 0.2rem 0.4rem 0rem 0rem;
+  font-size: 0.75rem;
+  color: var(--grayish-cyan);
+}
+
+.button {
+  font-size: 0.75rem;
+  font-weight: 500;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.25rem;
+  font-family: "Space Mono";
+}
+
+.primary {
+  background-color: var(--very-dark-cyan);
+  color: var(--light-grayish-cyan);
+}
+
+.secondary {
+  text-transform: uppercase;
+  font-weight: var(--heavy);
+  letter-spacing: 1px;
+  background-color: var(--light-grayish-cyan);
+  color: var(--dark-grayish-cyan);
+  margin: 1rem auto 0rem;
+  width: 100%;
+}
+
+.button:hover {
+  cursor: pointer;
+  background-color: var(--strong-cyan);
+  color: var(--very-dark-cyan);
+}
+
+.results {
+  background-color: var(--very-dark-cyan);
+  border-radius: 0.5rem;
+  width: 100%;
+  padding: 1rem;
+  position: relative;
+}
+
+.para {
+  font-size: 0.5rem;
+  color: var(--grayish-cyan);
+}
+
+.strong {
+  font-weight: var(--heavy);
+  color: var(--light-grayish-cyan);
+}
+
+.amount {
+  color: var(--strong-cyan);
+  position: absolute;
+  top: 0rem;
+  right: 0.5rem;
+  font-size: 1.5rem;
+}
+
+.attribution {
+  color: var(--white);
+  font-size: 0.5rem;
+  text-align: center;
+  margin: 0rem auto;
+}
+
+.attribution > a {
+  color: var(--blue);
+}
+
+@media screen and (width > 400px) {
+  .card {
+    flex-direction: row;
+    max-width: 75%;
+    min-width: 35rem;
+    margin: 1rem auto;
+  }
+  .fieldset {
+    display: grid;
+    grid-template: repeat(2, 1fr) / repeat(3, 1fr);
+    gap: 0.75rem;
+  }
+  #btn-5 {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  #btn-10 {
+    grid-column: 2;
+    grid-row: 1;
+  }
+  #btn-15 {
+    grid-column: 3;
+    grid-row: 1;
+  }
+  #btn-25 {
+    grid-column: 1;
+    grid-row: 2;
+  }
+  #custom {
+    grid-column: 2;
+    grid-row: 2;
+  }
+  .secondary {
+    position: absolute;
+    bottom: 0%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 8rem;
+  }
+}
